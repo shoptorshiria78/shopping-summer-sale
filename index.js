@@ -59,4 +59,5 @@ function onclickHandling(target){
     const container = document.getElementById('inputContainer');
     while (container.firstChild)
     container.removeChild(container.firstChild);
+    document.getElementById('coupon-field').value = ' ';
  })
