@@ -8,6 +8,7 @@ function onclickHandling(target){
     const applyBtn = document.getElementById('btn-apply');
     let presentTotalPrice = parseFloat(previousTotalPrice + productPrice);
     document.getElementById('tPrice').innerText = presentTotalPrice;
+    document.getElementById('total').innerText = presentTotalPrice;
 
     setValue(productName);
 
