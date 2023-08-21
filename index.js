@@ -6,7 +6,7 @@ function onclickHandling(target){
     const previousTotalPrice = parseFloat(document.getElementById("tPrice").innerText);
     const purchaseBtn = document.getElementById('btn-make');
     const applyBtn = document.getElementById('btn-apply');
-    let presentTotalPrice = previousTotalPrice + productPrice;
+    let presentTotalPrice = parseFloat(previousTotalPrice + productPrice);
     document.getElementById('tPrice').innerText = presentTotalPrice;
 
     setValue(productName);
@@ -62,5 +62,9 @@ function onclickHandling(target){
     while (container.firstChild)
     container.removeChild(container.firstChild);
     document.getElementById('coupon-field').value = ' ';
+    const purchaseBtn = document.getElementById('btn-make');
+    const applyBtn = document.getElementById('btn-apply');
+    purchaseBtn.setAttribute('disabled',true);
+    applyBtn.setAttribute('disabled',true);
     
  }
