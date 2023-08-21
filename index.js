@@ -37,22 +37,24 @@ function onclickHandling(target){
    container.appendChild(p);
  }
 
- document.getElementById('btn-apply').addEventListener('click', function(){
+  function apply(){
    
-   const coupon = document.getElementById('coupon-field').value;
+   const couponSpace = document.getElementById('coupon-field').value;
+   coupon = couponSpace.trim();
    let discount = parseFloat(document.getElementById("discount").innerText);
    let total = parseFloat(document.getElementById("total").innerText);
    const previousTotalPrice = parseFloat(document.getElementById("tPrice").innerText);
-   if(coupon === "SELL200"){
-       console.log('hello');
+   if(coupon == "SELL200"){
+       
        discount = previousTotalPrice * 0.2;
        document.getElementById('discount').innerText = discount.toFixed(3);
        total = previousTotalPrice - discount;
        document.getElementById('total').innerText = total.toFixed(3);
    }
- })
+ }
 
- document.getElementById('btn-go-home').addEventListener('click', function(event){
+  function goHome(){
+    
     document.getElementById('discount').innerText = '00';
     document.getElementById('tPrice').innerText = '00';
     document.getElementById('total').innerText = '00';
@@ -60,4 +62,5 @@ function onclickHandling(target){
     while (container.firstChild)
     container.removeChild(container.firstChild);
     document.getElementById('coupon-field').value = ' ';
- })
+    
+ }
